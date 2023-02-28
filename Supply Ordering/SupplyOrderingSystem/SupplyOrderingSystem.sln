@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupplyOrderForm", "ConsoleApp1\SupplyOrderForm.csproj", "{EBF32A89-6FAA-4391-9725-47CC0AEC544C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplyOrderForm.Tests", "SupplyOrderForm.Tests\SupplyOrderForm.Tests.csproj", "{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBF32A89-6FAA-4391-9725-47CC0AEC544C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF32A89-6FAA-4391-9725-47CC0AEC544C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF32A89-6FAA-4391-9725-47CC0AEC544C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF32A89-6FAA-4391-9725-47CC0AEC544C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0621F90-8150-4DC0-B1C6-D536F19E0043}
+	EndGlobalSection
+EndGlobal

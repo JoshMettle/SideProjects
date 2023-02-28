@@ -1,0 +1,11 @@
+P,1,Josh,Mettle,jmettle@supplyorders.com,614-321-9876
+P,2,John,Smith,jsmith@amazon.com,614-123-4567
+P,3,Matt,Thomas,mthomas@supplyorders.com,614-865-5485
+P,4,Jim,Wilson,jwilson@staples.com,789-4567
+P,5,Will,Matthews,wmatthews@supplyordres.com,761-789-5643
+V,Amazon,1,false,true,2
+V,Staples,2,true,false,4
+PR,1,Coffee,Fresh Ground Decaf Coffee,12,6.99,AZ123,6,12,1
+PR,2,Receipt Tape,50yd roll of thermal paper, 48, 62.99,ST456,10,30,2
+PR,3,Pens,Black Ball-Point Pens, 24,5.99,ST987,5,10,2
+PR,4,Dish Soap,Dawn Dish Soap - Lemon Scent, 1,3.99,AZ653,1,6,1
