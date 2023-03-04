@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+<Node Id="IModel" Label="SupplyOrdersContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="7.0.3" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
+Relational:MaxIdentifierLength: 128
+RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]
+SqlServer:ValueGenerationStrategy: IdentityColumn" Category="Model" Group="Expanded" />
+<Node Id = "Location" Label="Location" Name="Location" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Location
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "OrderDetail" Label="OrderDetail" Name="OrderDetail" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Order_Detail
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Location.LocationId" Label="LocationId (int)" Name="LocationId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: location_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Location.VendorOrderHeaders" Label="VendorOrderHeaders (*)" Name="VendorOrderHeaders" Category="Navigation Collection" Type="ICollection&lt;VendorOrderHeader&gt;"  Field="" Dependent="VendorOrderHeader" Principal="" Inverse="ShipTo" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Location.Vendors" Label="Vendors (*)" Name="Vendors" Category="Navigation Collection" Type="ICollection&lt;Vendor&gt;"  Field="" Dependent="Vendor" Principal="" Inverse="RemitToNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Location.Address1" Label="Address1 (string)" Name="Address1" Category="Property Required" Type="string" MaxLength="(250)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 250
+Relational:ColumnName: address1" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Location.Address2" Label="Address2 (string)" Name="Address2" Category="Property Optional" Type="string" MaxLength="(250)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 250
+Relational:ColumnName: address2" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Location.City" Label="City (string)" Name="City" Category="Property Required" Type="string" MaxLength="(200)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 200
+Relational:ColumnName: city" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Location.Name" Label="Name (string)" Name="Name" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Relational:ColumnName: name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Location.State" Label="State (string)" Name="State" Category="Property Required" Type="string" MaxLength="(2)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 2
+Relational:ColumnName: state
+Relational:IsFixedLength: True
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="False" ValueGenerated="None" />
+<Node Id = "Location.ZipCode" Label="ZipCode (string)" Name="ZipCode" Category="Property Required" Type="string" MaxLength="(10)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 10
+Relational:ColumnName: zip_code" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "OrderHeader" Label="OrderHeader" Name="OrderHeader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Order_Header
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "OrderDetail.OrderDetailId" Label="OrderDetailId (int)" Name="OrderDetailId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: order_detail_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "OrderDetail.Order" Label="Order (1)" Name="Order" Category="Navigation Property" Type="OrderHeader"  Field="" Dependent="" Principal="OrderHeader" Inverse="OrderDetails" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "OrderDetail.Product" Label="Product (1)" Name="Product" Category="Navigation Property" Type="Product"  Field="" Dependent="" Principal="Product" Inverse="OrderDetails" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "OrderDetail.Amount" Label="Amount (decimal)" Name="Amount" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: amount
+Relational:ColumnType: money" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "OrderDetail.OrderId" Label="OrderId (int)" Name="OrderId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: order_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "OrderDetail.ProductId" Label="ProductId (int)" Name="ProductId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: product_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "OrderDetail.Quantity" Label="Quantity (int)" Name="Quantity" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: quantity" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Person" Label="Person" Name="Person" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Person
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "OrderHeader.OrderId" Label="OrderId (int)" Name="OrderId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: order_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "OrderHeader.OrderDetails" Label="OrderDetails (*)" Name="OrderDetails" Category="Navigation Collection" Type="ICollection&lt;OrderDetail&gt;"  Field="" Dependent="OrderDetail" Principal="" Inverse="Order" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "OrderHeader.User" Label="User (1)" Name="User" Category="Navigation Property" Type="User"  Field="" Dependent="" Principal="User" Inverse="OrderHeaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "OrderHeader.VendorOrderHeaders" Label="VendorOrderHeaders (*)" Name="VendorOrderHeaders" Category="Navigation Collection" Type="ICollection&lt;VendorOrderHeader&gt;"  Field="" Dependent="VendorOrderHeader" Principal="" Inverse="Order" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "OrderHeader.OrderDate" Label="OrderDate (DateTime?)" Name="OrderDate" Category="Property Optional" Type="DateTime?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: order_date
+Relational:DefaultValueSql: (getdate())" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "OrderHeader.TotalAmount" Label="TotalAmount (decimal)" Name="TotalAmount" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: total_amount
+Relational:ColumnType: money" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "OrderHeader.UserId" Label="UserId (int)" Name="UserId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: user_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product" Label="Product" Name="Product" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Product
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Person.PersonId" Label="PersonId (int)" Name="PersonId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: person_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Person.Users" Label="Users (*)" Name="Users" Category="Navigation Collection" Type="ICollection&lt;User&gt;"  Field="" Dependent="User" Principal="" Inverse="Person" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Person.Vendors" Label="Vendors (*)" Name="Vendors" Category="Navigation Collection" Type="ICollection&lt;Vendor&gt;"  Field="" Dependent="Vendor" Principal="" Inverse="AccountContact" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Person.Email" Label="Email (string)" Name="Email" Category="Property Required" Type="string" MaxLength="(250)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 250
+Relational:ColumnName: email" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Person.FirstName" Label="FirstName (string)" Name="FirstName" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Relational:ColumnName: first_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Person.LastName" Label="LastName (string)" Name="LastName" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Relational:ColumnName: last_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Person.Phone" Label="Phone (string)" Name="Phone" Category="Property Optional" Type="string" MaxLength="(15)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 15
+Relational:ColumnName: phone" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "ProductCategory" Label="ProductCategory" Name="ProductCategory" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Product_Category
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Product.ProductId" Label="ProductId (int)" Name="ProductId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: product_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Product.OrderDetails" Label="OrderDetails (*)" Name="OrderDetails" Category="Navigation Collection" Type="ICollection&lt;OrderDetail&gt;"  Field="" Dependent="OrderDetail" Principal="" Inverse="Product" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Product.ProductTypeNavigation" Label="ProductTypeNavigation (1)" Name="ProductTypeNavigation" Category="Navigation Property" Type="ProductCategory"  Field="" Dependent="" Principal="ProductCategory" Inverse="Products" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Product.Vendor" Label="Vendor (1)" Name="Vendor" Category="Navigation Property" Type="Vendor"  Field="" Dependent="" Principal="Vendor" Inverse="Products" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Product.CaseQty" Label="CaseQty (int)" Name="CaseQty" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: case_qty" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.MaximumQty" Label="MaximumQty (int?)" Name="MaximumQty" Category="Property Optional" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: maximum_qty" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.MinimumQty" Label="MinimumQty (int?)" Name="MinimumQty" Category="Property Optional" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: minimum_qty" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.PricePerCase" Label="PricePerCase (decimal)" Name="PricePerCase" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: price_per_case
+Relational:ColumnType: money" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.ProductDescription" Label="ProductDescription (string)" Name="ProductDescription" Category="Property Required" Type="string" MaxLength="(400)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 400
+Relational:ColumnName: product_description" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.ProductName" Label="ProductName (string)" Name="ProductName" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Relational:ColumnName: product_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.ProductType" Label="ProductType (int?)" Name="ProductType" Category="Property Foreign" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: product_type" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.VendorId" Label="VendorId (int)" Name="VendorId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: vendor_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Product.VendorProductNumber" Label="VendorProductNumber (string)" Name="VendorProductNumber" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50
+Relational:ColumnName: vendor_product_number" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "User" Label="User" Name="User" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: User
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "ProductCategory.CategoryId" Label="CategoryId (int)" Name="CategoryId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: category_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "ProductCategory.Products" Label="Products (*)" Name="Products" Category="Navigation Collection" Type="ICollection&lt;Product&gt;"  Field="" Dependent="Product" Principal="" Inverse="ProductTypeNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "ProductCategory.CategoryName" Label="CategoryName (string)" Name="CategoryName" Category="Property Optional" Type="string" MaxLength="(200)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 200
+Relational:ColumnName: category_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "UserAccessLevel" Label="UserAccessLevel" Name="UserAccessLevel" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: User_Access_Level
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "User.UserId" Label="UserId (int)" Name="UserId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: user_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "User.AccessLevelNavigation" Label="AccessLevelNavigation (1)" Name="AccessLevelNavigation" Category="Navigation Property" Type="UserAccessLevel"  Field="" Dependent="" Principal="UserAccessLevel" Inverse="Users" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "User.OrderHeaders" Label="OrderHeaders (*)" Name="OrderHeaders" Category="Navigation Collection" Type="ICollection&lt;OrderHeader&gt;"  Field="" Dependent="OrderHeader" Principal="" Inverse="User" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "User.Person" Label="Person (1)" Name="Person" Category="Navigation Property" Type="Person"  Field="" Dependent="" Principal="Person" Inverse="Users" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "User.AccessLevel" Label="AccessLevel (int)" Name="AccessLevel" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: access_level
+Relational:DefaultValueSql: ((1))" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "User.Password" Label="Password (string)" Name="Password" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50
+Relational:ColumnName: password" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "User.PersonId" Label="PersonId (int)" Name="PersonId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: person_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "User.Salt" Label="Salt (string)" Name="Salt" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50
+Relational:ColumnName: salt" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "User.Username" Label="Username (string)" Name="Username" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50
+Relational:ColumnName: username" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Vendor" Label="Vendor" Name="Vendor" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Vendor
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "UserAccessLevel.AccessLevelId" Label="AccessLevelId (int)" Name="AccessLevelId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: access_level_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "UserAccessLevel.Users" Label="Users (*)" Name="Users" Category="Navigation Collection" Type="ICollection&lt;User&gt;"  Field="" Dependent="User" Principal="" Inverse="AccessLevelNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "UserAccessLevel.AccessLevelName" Label="AccessLevelName (string)" Name="AccessLevelName" Category="Property Required" Type="string" MaxLength="(50)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 50
+Relational:ColumnName: access_level_name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "UserAccessLevel.MaxPurchaseAmount" Label="MaxPurchaseAmount (decimal?)" Name="MaxPurchaseAmount" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: max_purchase_amount
+Relational:ColumnType: money" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderDetail" Label="VendorOrderDetail" Name="VendorOrderDetail" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Vendor_Order_Detail
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Vendor.VendorId" Label="VendorId (int)" Name="VendorId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: vendor_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Vendor.AccountContact" Label="AccountContact (1)" Name="AccountContact" Category="Navigation Property" Type="Person"  Field="" Dependent="" Principal="Person" Inverse="Vendors" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Vendor.Products" Label="Products (*)" Name="Products" Category="Navigation Collection" Type="ICollection&lt;Product&gt;"  Field="" Dependent="Product" Principal="" Inverse="Vendor" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Vendor.RemitToNavigation" Label="RemitToNavigation (1)" Name="RemitToNavigation" Category="Navigation Property" Type="Location"  Field="" Dependent="" Principal="Location" Inverse="Vendors" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Vendor.VendorOrderHeaders" Label="VendorOrderHeaders (*)" Name="VendorOrderHeaders" Category="Navigation Collection" Type="ICollection&lt;VendorOrderHeader&gt;"  Field="" Dependent="VendorOrderHeader" Principal="" Inverse="Vendor" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Vendor.AccountContactId" Label="AccountContactId (int?)" Name="AccountContactId" Category="Property Foreign" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: account_contact_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Vendor.IsConsolidatedBilling" Label="IsConsolidatedBilling (bool)" Name="IsConsolidatedBilling" Category="Property Required" Type="bool" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: is_consolidated_billing" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Vendor.IsDirectShip" Label="IsDirectShip (bool?)" Name="IsDirectShip" Category="Property Required" Type="bool?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: is_direct_ship
+Relational:DefaultValueSql: ((1))" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Vendor.Name" Label="Name (string)" Name="Name" Category="Property Required" Type="string" MaxLength="(250)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 250
+Relational:ColumnName: name" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Vendor.RemitTo" Label="RemitTo (int?)" Name="RemitTo" Category="Property Foreign" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: remit_to" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderHeader" Label="VendorOrderHeader" Name="VendorOrderHeader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Vendor_Order_Header
+RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "VendorOrderDetail.VendorOrderDetailId" Label="VendorOrderDetailId (int)" Name="VendorOrderDetailId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: vendor_order_detail_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "VendorOrderDetail.VendorOrder" Label="VendorOrder (1)" Name="VendorOrder" Category="Navigation Property" Type="VendorOrderHeader"  Field="" Dependent="" Principal="VendorOrderHeader" Inverse="VendorOrderDetails" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "VendorOrderDetail.Amount" Label="Amount (decimal)" Name="Amount" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: amount
+Relational:ColumnType: money" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderDetail.OrderId" Label="OrderId (int)" Name="OrderId" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: order_id" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderDetail.OrderLineItem" Label="OrderLineItem (int)" Name="OrderLineItem" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: order_line_item" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderDetail.Quantity" Label="Quantity (int)" Name="Quantity" Category="Property Required" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: quantity" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderDetail.VendorItemNumber" Label="VendorItemNumber (string)" Name="VendorItemNumber" Category="Property Required" Type="string" MaxLength="(200)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 200
+Relational:ColumnName: vendor_item_number" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderDetail.VendorOrderId" Label="VendorOrderId (int)" Name="VendorOrderId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: vendor_order_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderHeader" Label="VendorOrderHeader" Name="VendorOrderHeader" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="" Category="EntityType" Group="Expanded" />
+<Node Id = "VendorOrderHeader.VendorOrderId" Label="VendorOrderId (int)" Name="VendorOrderId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: vendor_order_id
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "VendorOrderHeader.Order" Label="Order (1)" Name="Order" Category="Navigation Property" Type="OrderHeader"  Field="" Dependent="" Principal="OrderHeader" Inverse="VendorOrderHeaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "VendorOrderHeader.ShipTo" Label="ShipTo (1)" Name="ShipTo" Category="Navigation Property" Type="Location"  Field="" Dependent="" Principal="Location" Inverse="VendorOrderHeaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "VendorOrderHeader.Vendor" Label="Vendor (1)" Name="Vendor" Category="Navigation Property" Type="Vendor"  Field="" Dependent="" Principal="Vendor" Inverse="VendorOrderHeaders" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "VendorOrderHeader.VendorOrderDetails" Label="VendorOrderDetails (*)" Name="VendorOrderDetails" Category="Navigation Collection" Type="ICollection&lt;VendorOrderDetail&gt;"  Field="" Dependent="VendorOrderDetail" Principal="" Inverse="VendorOrder" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "VendorOrderHeader.Amount" Label="Amount (decimal)" Name="Amount" Category="Property Required" Type="decimal" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: amount
+Relational:ColumnType: money" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderHeader.OrderId" Label="OrderId (int)" Name="OrderId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: order_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderHeader.ShipToId" Label="ShipToId (int)" Name="ShipToId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: ship_to_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderHeader.VendorId" Label="VendorId (int)" Name="VendorId" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: vendor_id" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "VendorOrderHeader.VendorOrderDate" Label="VendorOrderDate (DateTime?)" Name="VendorOrderDate" Category="Property Optional" Type="DateTime?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: vendor_order_date
+Relational:DefaultValueSql: (getdate())" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+  </Nodes>
+  <Links>
+<Link Source = "IModel" Target="Location" Category="Contains" />
+<Link Source = "IModel" Target="OrderDetail" Category="Contains" />
+<Link Source = "Location" Target="Location.VendorOrderHeaders" Category="Contains" />
+<Link Source = "Location" Target="Location.Vendors" Category="Contains" />
+<Link Source = "Location" Target="Location.LocationId" Category="Contains" />
+<Link Source = "Location" Target="Location.Address1" Category="Contains" />
+<Link Source = "Location" Target="Location.Address2" Category="Contains" />
+<Link Source = "Location" Target="Location.City" Category="Contains" />
+<Link Source = "Location" Target="Location.Name" Category="Contains" />
+<Link Source = "Location" Target="Location.State" Category="Contains" />
+<Link Source = "Location" Target="Location.ZipCode" Category="Contains" />
+<Link Source = "IModel" Target="OrderHeader" Category="Contains" />
+<Link Source = "OrderDetail" Target="OrderDetail.Order" Category="Contains" />
+<Link Source = "OrderDetail" Target="OrderDetail.Product" Category="Contains" />
+<Link Source = "OrderDetail" Target="OrderDetail.OrderDetailId" Category="Contains" />
+<Link Source="OrderDetail" Target="OrderHeader" From="OrderDetail.OrderId" To="OrderHeader.OrderId" Name="OrderDetail -> OrderHeader" Annotations="Relational:Name: FK_order_detail_order_id" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="OrderDetail" Target="Product" From="OrderDetail.ProductId" To="Product.ProductId" Name="OrderDetail -> Product" Annotations="Relational:Name: FK_order_detail_product" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "OrderDetail" Target="OrderDetail.Amount" Category="Contains" />
+<Link Source = "OrderDetail" Target="OrderDetail.OrderId" Category="Contains" />
+<Link Source = "OrderDetail" Target="OrderDetail.ProductId" Category="Contains" />
+<Link Source = "OrderDetail" Target="OrderDetail.Quantity" Category="Contains" />
+<Link Source = "IModel" Target="Person" Category="Contains" />
+<Link Source = "OrderHeader" Target="OrderHeader.OrderDetails" Category="Contains" />
+<Link Source = "OrderHeader" Target="OrderHeader.User" Category="Contains" />
+<Link Source = "OrderHeader" Target="OrderHeader.VendorOrderHeaders" Category="Contains" />
+<Link Source = "OrderHeader" Target="OrderHeader.OrderId" Category="Contains" />
+<Link Source="OrderHeader" Target="User" From="OrderHeader.UserId" To="User.UserId" Name="OrderHeader -> User" Annotations="Relational:Name: FK_order_header_user" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "OrderHeader" Target="OrderHeader.OrderDate" Category="Contains" />
+<Link Source = "OrderHeader" Target="OrderHeader.TotalAmount" Category="Contains" />
+<Link Source = "OrderHeader" Target="OrderHeader.UserId" Category="Contains" />
+<Link Source = "IModel" Target="Product" Category="Contains" />
+<Link Source = "Person" Target="Person.Users" Category="Contains" />
+<Link Source = "Person" Target="Person.Vendors" Category="Contains" />
+<Link Source = "Person" Target="Person.PersonId" Category="Contains" />
+<Link Source = "Person" Target="Person.Email" Category="Contains" />
+<Link Source = "Person" Target="Person.FirstName" Category="Contains" />
+<Link Source = "Person" Target="Person.LastName" Category="Contains" />
+<Link Source = "Person" Target="Person.Phone" Category="Contains" />
+<Link Source = "IModel" Target="ProductCategory" Category="Contains" />
+<Link Source = "Product" Target="Product.OrderDetails" Category="Contains" />
+<Link Source = "Product" Target="Product.ProductTypeNavigation" Category="Contains" />
+<Link Source = "Product" Target="Product.Vendor" Category="Contains" />
+<Link Source = "Product" Target="Product.ProductId" Category="Contains" />
+<Link Source="Product" Target="ProductCategory" From="Product.ProductType" To="ProductCategory.CategoryId" Name="Product -> ProductCategory" Annotations="Relational:Name: FK_product_category" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Product" Target="Vendor" From="Product.VendorId" To="Vendor.VendorId" Name="Product -> Vendor" Annotations="Relational:Name: FK_vendor_id" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Product" Target="Product.CaseQty" Category="Contains" />
+<Link Source = "Product" Target="Product.MaximumQty" Category="Contains" />
+<Link Source = "Product" Target="Product.MinimumQty" Category="Contains" />
+<Link Source = "Product" Target="Product.PricePerCase" Category="Contains" />
+<Link Source = "Product" Target="Product.ProductDescription" Category="Contains" />
+<Link Source = "Product" Target="Product.ProductName" Category="Contains" />
+<Link Source = "Product" Target="Product.ProductType" Category="Contains" />
+<Link Source = "Product" Target="Product.VendorId" Category="Contains" />
+<Link Source = "Product" Target="Product.VendorProductNumber" Category="Contains" />
+<Link Source = "IModel" Target="User" Category="Contains" />
+<Link Source = "ProductCategory" Target="ProductCategory.Products" Category="Contains" />
+<Link Source = "ProductCategory" Target="ProductCategory.CategoryId" Category="Contains" />
+<Link Source = "ProductCategory" Target="ProductCategory.CategoryName" Category="Contains" />
+<Link Source = "IModel" Target="UserAccessLevel" Category="Contains" />
+<Link Source = "User" Target="User.AccessLevelNavigation" Category="Contains" />
+<Link Source = "User" Target="User.OrderHeaders" Category="Contains" />
+<Link Source = "User" Target="User.Person" Category="Contains" />
+<Link Source = "User" Target="User.UserId" Category="Contains" />
+<Link Source="User" Target="UserAccessLevel" From="User.AccessLevel" To="UserAccessLevel.AccessLevelId" Name="User -> UserAccessLevel" Annotations="Relational:Name: FK_user_access_level" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="User" Target="Person" From="User.PersonId" To="Person.PersonId" Name="User -> Person" Annotations="Relational:Name: FK_user_person_id" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "User" Target="User.AccessLevel" Category="Contains" />
+<Link Source = "User" Target="User.Password" Category="Contains" />
+<Link Source = "User" Target="User.PersonId" Category="Contains" />
+<Link Source = "User" Target="User.Salt" Category="Contains" />
+<Link Source = "User" Target="User.Username" Category="Contains" />
+<Link Source = "IModel" Target="Vendor" Category="Contains" />
+<Link Source = "UserAccessLevel" Target="UserAccessLevel.Users" Category="Contains" />
+<Link Source = "UserAccessLevel" Target="UserAccessLevel.AccessLevelId" Category="Contains" />
+<Link Source = "UserAccessLevel" Target="UserAccessLevel.AccessLevelName" Category="Contains" />
+<Link Source = "UserAccessLevel" Target="UserAccessLevel.MaxPurchaseAmount" Category="Contains" />
+<Link Source = "IModel" Target="VendorOrderDetail" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.AccountContact" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.Products" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.RemitToNavigation" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.VendorOrderHeaders" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.VendorId" Category="Contains" />
+<Link Source="Vendor" Target="Person" From="Vendor.AccountContactId" To="Person.PersonId" Name="Vendor -> Person" Annotations="Relational:Name: FK_account_contact" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Vendor" Target="Location" From="Vendor.RemitTo" To="Location.LocationId" Name="Vendor -> Location" Annotations="Relational:Name: FK_remit_to" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Vendor" Target="Vendor.AccountContactId" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.IsConsolidatedBilling" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.IsDirectShip" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.Name" Category="Contains" />
+<Link Source = "Vendor" Target="Vendor.RemitTo" Category="Contains" />
+<Link Source = "IModel" Target="VendorOrderHeader" Category="Contains" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.VendorOrder" Category="Contains" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.VendorOrderDetailId" Category="Contains" />
+<Link Source="VendorOrderDetail" Target="VendorOrderHeader" From="VendorOrderDetail.VendorOrderId" To="VendorOrderHeader.VendorOrderId" Name="VendorOrderDetail -> VendorOrderHeader" Annotations="Relational:Name: FK_vendor_order_detail_order_id" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.Amount" Category="Contains" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.OrderId" Category="Contains" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.OrderLineItem" Category="Contains" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.Quantity" Category="Contains" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.VendorItemNumber" Category="Contains" />
+<Link Source = "VendorOrderDetail" Target="VendorOrderDetail.VendorOrderId" Category="Contains" />
+<Link Source = "IModel" Target="VendorOrderHeader" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.Order" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.ShipTo" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.Vendor" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.VendorOrderDetails" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.VendorOrderId" Category="Contains" />
+<Link Source="VendorOrderHeader" Target="OrderHeader" From="VendorOrderHeader.OrderId" To="OrderHeader.OrderId" Name="VendorOrderHeader -> OrderHeader" Annotations="Relational:Name: FK_vendor_order_order_id" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="VendorOrderHeader" Target="Location" From="VendorOrderHeader.ShipToId" To="Location.LocationId" Name="VendorOrderHeader -> Location" Annotations="Relational:Name: FK_vendor_ship_to" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="VendorOrderHeader" Target="Vendor" From="VendorOrderHeader.VendorId" To="Vendor.VendorId" Name="VendorOrderHeader -> Vendor" Annotations="Relational:Name: FK_vendor_order_vendor_id" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.Amount" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.OrderId" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.ShipToId" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.VendorId" Category="Contains" />
+<Link Source = "VendorOrderHeader" Target="VendorOrderHeader.VendorOrderDate" Category="Contains" />
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+  <Properties>
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="Field"  Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type"  Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />    
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass"  Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+  </Properties>
+</DirectedGraph>
