@@ -1,4 +1,4 @@
-namespace SupplyOrderForm.Tests
+namespace SupplyOrderDomain.Tests
 {
     [TestClass]
     public class UnitTest1

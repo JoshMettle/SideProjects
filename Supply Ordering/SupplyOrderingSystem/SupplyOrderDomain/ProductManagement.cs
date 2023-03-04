@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SupplyOrderForm
+namespace SupplyOrderDomain
 {
     public class ProductManagement
     {
@@ -26,7 +26,7 @@ namespace SupplyOrderForm
             foreach (Product product in productList)
             {
                 Vendor vendor = vendorManagement.GetVendor(product.VendorId);
-                sb.AppendLine($"{product.ProductId.ToString().PadRight(5)}{product.Name.PadRight(20)}{product.Description.PadRight(40)}{product.CaseQty.ToString().PadRight(11)}{product.PricePerCase.ToString("C").PadRight(13)}{vendor.VendorName.PadRight(15)}{product.MinQty.ToString().PadRight(12)}{product.MaxQty.ToString()}");
+                sb.AppendLine($"{product.ProductId.ToString().PadRight(5)}{product.ProductName.PadRight(20)}{product.ProductDescription.PadRight(40)}{product.CaseQty.ToString().PadRight(11)}{product.PricePerCase.ToString("C").PadRight(13)}{vendor.Name.PadRight(15)}{product.MinQty.ToString().PadRight(12)}{product.MaxQty.ToString()}");
                 foundMatch = true;
             }
 

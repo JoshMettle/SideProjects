@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SupplyOrderForm
+namespace SupplyOrderConsole
 {
     public class UI_UserContactMaintenance
     {

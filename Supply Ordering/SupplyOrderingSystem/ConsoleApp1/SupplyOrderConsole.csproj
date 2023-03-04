@@ -12,4 +12,9 @@
     <PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SupplyOrderContext\SupplyOrderData.csproj" />
+    <ProjectReference Include="..\SupplyOrderDomain\SupplyOrderDomain.csproj" />
+  </ItemGroup>
+
 </Project>

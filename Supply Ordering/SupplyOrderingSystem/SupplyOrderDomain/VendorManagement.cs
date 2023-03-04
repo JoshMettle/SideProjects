@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace SupplyOrderForm
+namespace SupplyOrderDomain
 {
     public class VendorManagement
     {
         List<Vendor> vendorList = new List<Vendor>();
 
 
-        public void AddVendor(string name, int id, int contactId, bool directShip, bool consolidatedBilling)
+        public void AddVendor(string name, int vendorId, int contactId, bool directShip, bool consolidatedBilling)
         {
-            Vendor newVendor = new Vendor(name, id, contactId, directShip, consolidatedBilling);
+            Vendor newVendor = new Vendor(vendorId,name, contactId, directShip, consolidatedBilling);
             vendorList.Add(newVendor);
         }
 
@@ -46,7 +46,7 @@ namespace SupplyOrderForm
                     consolidatedBilling = "Corporate";
                 }
 
-                sb.AppendLine($"{vendor.VendorId.ToString(),-5}{vendor.VendorName,-20}{Contact.ToString(),-15}{consolidatedBilling.PadRight(10)}{directShip}");
+                sb.AppendLine($"{vendor.VendorId.ToString(),-5}{vendor.Name,-20}{Contact.ToString(),-15}{consolidatedBilling.PadRight(10)}{directShip}");
                 foundMatch = true;
             }
 

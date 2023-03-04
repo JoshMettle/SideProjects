@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using SupplyOrderDomain;
 
-namespace SupplyOrderForm
+namespace SupplyOrderConsole
 {
     public class UI_MainMenu
     {
@@ -70,16 +71,16 @@ namespace SupplyOrderForm
 
                 string userInput = Console.ReadLine();
 
-                if(userInput == "")
+                if (userInput == "")
                 {
                     keepGoing = false;
                     continue;
-                } 
+                }
 
-                string result =cart.ValidateProductSelection(userInput, productManagement);
+                string result = cart.ValidateProductSelection(userInput, productManagement);
 
                 Console.WriteLine(result);
-                
+
                 bool keepGoing2 = true;
                 while (keepGoing2)
                 {

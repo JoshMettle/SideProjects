@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupplyOrderForm", "ConsoleApp1\SupplyOrderForm.csproj", "{EBF32A89-6FAA-4391-9725-47CC0AEC544C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupplyOrderConsole", "ConsoleApp1\SupplyOrderConsole.csproj", "{EBF32A89-6FAA-4391-9725-47CC0AEC544C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4F5D20C9-2227-4D79-8008-6249C394C101} = {4F5D20C9-2227-4D79-8008-6249C394C101}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplyOrderForm.Tests", "SupplyOrderForm.Tests\SupplyOrderForm.Tests.csproj", "{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupplyOrderDomain.Tests", "SupplyOrderForm.Tests\SupplyOrderDomain.Tests.csproj", "{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplyOrderData", "SupplyOrderContext\SupplyOrderData.csproj", "{4F5D20C9-2227-4D79-8008-6249C394C101}"
+	ProjectSection(ProjectDependencies) = postProject
+		{87268EF5-5CCE-4055-B819-7F8EECB7DB84} = {87268EF5-5CCE-4055-B819-7F8EECB7DB84}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupplyOrderDomain", "SupplyOrderDomain\SupplyOrderDomain.csproj", "{87268EF5-5CCE-4055-B819-7F8EECB7DB84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +31,14 @@ Global
 		{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E16B0C-C4B6-4F63-BFBA-FA7AB8430066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5D20C9-2227-4D79-8008-6249C394C101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5D20C9-2227-4D79-8008-6249C394C101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5D20C9-2227-4D79-8008-6249C394C101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5D20C9-2227-4D79-8008-6249C394C101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87268EF5-5CCE-4055-B819-7F8EECB7DB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87268EF5-5CCE-4055-B819-7F8EECB7DB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87268EF5-5CCE-4055-B819-7F8EECB7DB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87268EF5-5CCE-4055-B819-7F8EECB7DB84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

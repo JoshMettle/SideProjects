@@ -1,10 +1,11 @@
-﻿using System;
+﻿using SupplyOrderDomain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SupplyOrderForm
+namespace SupplyOrderConsole
 {
     public class Cart
     {
@@ -24,7 +25,7 @@ namespace SupplyOrderForm
             }
 
             Product? product = productManagement.FindProduct(productId);
-            if(product == null)
+            if (product == null)
             {
                 return "invalid product id please try again";
             }
@@ -33,17 +34,18 @@ namespace SupplyOrderForm
                 return "Please enter the quantity to be added or press enter to cancel";
             }
 
-            
+
         }
 
         public string AddQuantityToCart(string strQty, string productId, ProductManagement productManagement)
         {
-            if (!int.TryParse(strQty, out int Qty)){
+            if (!int.TryParse(strQty, out int Qty))
+            {
                 return "Invalid Quantity please reselect product.  Please reenter order quantity.";
             }
 
             Product product = productManagement.FindProduct(int.Parse(productId));
-            
+
             int existingQty = 0;
 
             if (cart.ContainsKey(product))
@@ -51,15 +53,15 @@ namespace SupplyOrderForm
                 existingQty = cart[product];
             }
 
-            if((Qty) < product.MinQty)
+            if (Qty < product.MinQty)
             {
                 return "Quantity selected is less than the minimum required order.  Please reenter order quantity.";
             }
             else if (Qty > product.MaxQty)
             {
                 return "Quantity selected is greater than the maximum order amount.  Please reenter order quantity.";
-            }            
-            else if ((Qty+existingQty) > product.MaxQty)
+            }
+            else if (Qty + existingQty > product.MaxQty)
             {
                 return "Quantity selected will increase total amount order over the maximum order amount.  Please reenter order quantity.";
             }
@@ -74,7 +76,7 @@ namespace SupplyOrderForm
                     cart[product] = Qty;
                 }
 
-                return $"{Qty} {product.Name} have been added to your cart";
+                return $"{Qty} {product.ProductName} have been added to your cart";
             }
         }
     }

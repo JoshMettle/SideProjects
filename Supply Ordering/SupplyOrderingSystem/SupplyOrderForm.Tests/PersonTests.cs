@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SupplyOrderForm;
+using SupplyOrderDomain;
 using System.Data;
 
-namespace SupplyOrderForm.Tests
+namespace SupplyOrderDomain.Tests
 {
     [TestClass]
     public class MyTestClass
