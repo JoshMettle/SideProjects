@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SupplyDepotDomain.Model;
 
@@ -19,6 +20,8 @@ public partial class Location
 
     public string ZipCode { get; set; } = null!;
 
+    [DefaultValue("false")]
+    public bool? IsInactive { get; set; }
     public virtual ICollection<VendorOrderHeader> VendorOrderHeaders { get; } = new List<VendorOrderHeader>();
 
     public virtual ICollection<Vendor> Vendors { get; } = new List<Vendor>();

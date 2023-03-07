@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using SupplyDepotDomain.Model;
 
-namespace SupplyDepotDomain;
+namespace SupplyDepotDomain.Model;
 
 public partial class SupplyOrdersContext : DbContext
 {
@@ -48,7 +47,7 @@ public partial class SupplyOrdersContext : DbContext
             entity.HasKey(e => e.LocationId).HasName("PK_location");
 
             entity.ToTable("Location");
-
+            entity.Property(e => e.IsInactive).HasColumnName("Obsolete").HasDefaultValueSql("((0))");
             entity.Property(e => e.LocationId).HasColumnName("location_id");
             entity.Property(e => e.Address1)
                 .HasMaxLength(250)
@@ -123,7 +122,7 @@ public partial class SupplyOrdersContext : DbContext
             entity.HasKey(e => e.PersonId).HasName("PK_person");
 
             entity.ToTable("Person");
-
+            entity.Property(e => e.IsInactive).HasColumnName("Obsolete").HasDefaultValueSql("((0))");
             entity.Property(e => e.PersonId).HasColumnName("person_id");
             entity.Property(e => e.Email)
                 .HasMaxLength(250)
@@ -146,7 +145,7 @@ public partial class SupplyOrdersContext : DbContext
             entity.ToTable("Product");
 
             entity.HasIndex(e => new { e.VendorId, e.VendorProductNumber }, "UQ_vendor_product").IsUnique();
-
+            entity.Property(e => e.IsInactive).HasColumnName("Obsolete").HasDefaultValueSql("((0))");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.CaseQty).HasColumnName("case_qty");
             entity.Property(e => e.MaximumQty).HasColumnName("maximum_qty");
@@ -197,7 +196,7 @@ public partial class SupplyOrdersContext : DbContext
             entity.ToTable("User");
 
             entity.HasIndex(e => e.Username, "UQ_username").IsUnique();
-
+            entity.Property(e => e.IsInactive).HasColumnName("Obsolete").HasDefaultValueSql("((0))");
             entity.Property(e => e.UserId).HasColumnName("user_id");
             entity.Property(e => e.AccessLevel)
                 .HasDefaultValueSql("((1))")
@@ -248,6 +247,7 @@ public partial class SupplyOrdersContext : DbContext
             entity.Property(e => e.VendorId).HasColumnName("vendor_id");
             entity.Property(e => e.AccountContactId).HasColumnName("account_contact_id");
             entity.Property(e => e.IsConsolidatedBilling).HasColumnName("is_consolidated_billing");
+            entity.Property(e => e.IsInactive).HasColumnName("Obsolete").HasDefaultValueSql("((0))");
             entity.Property(e => e.IsDirectShip)
                 .IsRequired()
                 .HasDefaultValueSql("((1))")

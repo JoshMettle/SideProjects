@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SupplyDepotDomain.Model;
 
@@ -15,6 +16,8 @@ public partial class User
 
     public int PersonId { get; set; }
 
+    [DefaultValue("false")]
+    public bool? IsInactive { get; set; }
     public int AccessLevel { get; set; }
 
     public virtual UserAccessLevel AccessLevelNavigation { get; set; } = null!;

@@ -18,7 +18,8 @@ namespace SupplyDepotDomain.DAO
         public List<Vendor> GetAllVendors()
         {
             using SupplyOrdersContext context = new SupplyOrdersContext();
-            List<Vendor> vendors = context.Vendors.Include(v => v.AccountContact).ToList();
+            List<Vendor> vendors = context.Vendors.Include(v => v.AccountContact)
+                                                  .Include(v => v.RemitToNavigation).ToList();
             return vendors;
         }
 
@@ -30,7 +31,19 @@ namespace SupplyDepotDomain.DAO
         public Vendor? GetVendorById(int id)
         {
             using SupplyOrdersContext context = new SupplyOrdersContext();
-            Vendor? vendor = context.Vendors.Find(id);
+            Vendor? vendor = context.Vendors.Find();
+            if(vendor == null)
+            {
+                return vendor;
+            }
+            else if(vendor.AccountContactId != null)
+            {
+                vendor.AccountContact = context.People.Find(vendor.AccountContactId);
+            }
+            else if (vendor.RemitTo != null)
+            {
+                vendor.RemitToNavigation = context.Locations.Find(vendor.RemitTo);
+            }
             return vendor;
         }
 
@@ -63,6 +76,7 @@ namespace SupplyDepotDomain.DAO
             Vendor? targetVendor = context.Vendors.Find(vendor.VendorId);
             if (targetVendor != null)
             {
+
                 targetVendor.AccountContact = contact;
                 targetVendor.AccountContactId = contact.PersonId;
                 context.SaveChanges();
@@ -70,6 +84,12 @@ namespace SupplyDepotDomain.DAO
             return targetVendor;
         }
 
+        /// <summary>
+        /// Adds a remit to address to a vendor.
+        /// </summary>
+        /// <param name="vendor">Vendor to be modified</param>
+        /// <param name="remitTo">Location to be added</param>
+        /// <returns>Updated vendor account</returns>
         public Vendor? AddRemitToLocation(Vendor vendor, Location remitTo)
         {
             using SupplyOrdersContext context = new SupplyOrdersContext();
@@ -84,7 +104,7 @@ namespace SupplyDepotDomain.DAO
             return targetVendor;
         }
 
-        public bool DeleteVendor(Vendor vendor)
+        public bool DeactivateVendor(Vendor vendor)
         {
             bool vendorDeleted = false;
             using SupplyOrdersContext context = new SupplyOrdersContext();

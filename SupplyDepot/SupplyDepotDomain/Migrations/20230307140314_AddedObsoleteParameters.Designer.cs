@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SupplyDepotDomain.Model;
 
@@ -11,9 +12,11 @@ using SupplyDepotDomain.Model;
 namespace SupplyDepotDomain.Migrations
 {
     [DbContext(typeof(SupplyOrdersContext))]
-    partial class SupplyOrdersContextModelSnapshot : ModelSnapshot
+    [Migration("20230307140314_AddedObsoleteParameters")]
+    partial class AddedObsoleteParameters
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,10 +58,7 @@ namespace SupplyDepotDomain.Migrations
                         .HasColumnName("name");
 
                     b.Property<bool?>("Obsolete")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasColumnName("Obsolete")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("State")
                         .IsRequired()
@@ -174,10 +174,7 @@ namespace SupplyDepotDomain.Migrations
                         .HasColumnName("last_name");
 
                     b.Property<bool?>("Obsolete")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasColumnName("Obsolete")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Phone")
                         .HasMaxLength(15)
@@ -212,10 +209,7 @@ namespace SupplyDepotDomain.Migrations
                         .HasColumnName("minimum_qty");
 
                     b.Property<bool?>("Obsolete")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasColumnName("Obsolete")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("PricePerCase")
                         .HasColumnType("money")
@@ -391,10 +385,7 @@ namespace SupplyDepotDomain.Migrations
                         .HasColumnName("name");
 
                     b.Property<bool?>("Obsolete")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasColumnName("Obsolete")
-                        .HasDefaultValueSql("((0))");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("RemitTo")
                         .HasColumnType("int")

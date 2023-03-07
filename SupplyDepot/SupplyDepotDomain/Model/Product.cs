@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SupplyDepotDomain.Model;
 
@@ -25,6 +26,8 @@ public partial class Product
 
     public int? ProductType { get; set; }
 
+    [DefaultValue("false")]
+    public bool? IsInactive { get; set; }
     public virtual ICollection<OrderDetail> OrderDetails { get; } = new List<OrderDetail>();
 
     public virtual ProductCategory? ProductTypeNavigation { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SupplyDepotDomain.Model;
@@ -18,6 +19,8 @@ public partial class Vendor
 
     public int? RemitTo { get; set; }
 
+    [DefaultValue("false")]
+    public bool? IsInactive { get; set; }
     public virtual Person? AccountContact { get; set; }
 
     public virtual ICollection<Product> Products { get; } = new List<Product>();
