@@ -19,7 +19,7 @@ namespace SupplyDepotDomain.DAO
         {
             using SupplyOrdersContext context = new SupplyOrdersContext();
             List<Vendor> vendors = context.Vendors.Include(v => v.AccountContact)
-                                                  .Include(v => v.RemitToNavigation).ToList();
+                                                  .Include(v => v.RemitToLocation).ToList();
             return vendors;
         }
 
@@ -31,19 +31,8 @@ namespace SupplyDepotDomain.DAO
         public Vendor? GetVendorById(int id)
         {
             using SupplyOrdersContext context = new SupplyOrdersContext();
-            Vendor? vendor = context.Vendors.Find();
-            if(vendor == null)
-            {
-                return vendor;
-            }
-            else if(vendor.AccountContactId != null)
-            {
-                vendor.AccountContact = context.People.Find(vendor.AccountContactId);
-            }
-            else if (vendor.RemitTo != null)
-            {
-                vendor.RemitToNavigation = context.Locations.Find(vendor.RemitTo);
-            }
+            Vendor? vendor = context.Vendors.Include(v => v.AccountContact).Include(v => v.RemitToLocation).FirstOrDefault(v => v.VendorId == id);
+
             return vendor;
         }
 
@@ -63,7 +52,7 @@ namespace SupplyDepotDomain.DAO
 
             return vendor;
         }
-        
+
         /// <summary>
         /// Adds an account contact to the vendor
         /// </summary>
@@ -96,9 +85,9 @@ namespace SupplyDepotDomain.DAO
             Vendor? targetVendor = context.Vendors.Find(vendor.VendorId);
             if (targetVendor != null)
             {
-                targetVendor.RemitTo = remitTo.LocationId;
-                targetVendor.RemitToNavigation = remitTo;
-            context.SaveChanges();
+                targetVendor.RemitToId = remitTo.LocationId;
+                targetVendor.RemitToLocation = remitTo;
+                context.SaveChanges();
             }
 
             return targetVendor;
@@ -108,7 +97,7 @@ namespace SupplyDepotDomain.DAO
         {
             bool vendorDeleted = false;
             using SupplyOrdersContext context = new SupplyOrdersContext();
-            if(context.Vendors.Find(vendor.VendorId) != null)
+            if (context.Vendors.Find(vendor.VendorId) != null)
             {
                 context.Vendors.Remove(vendor);
                 vendorDeleted = true;

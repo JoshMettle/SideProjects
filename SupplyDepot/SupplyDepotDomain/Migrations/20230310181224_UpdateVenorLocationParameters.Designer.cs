@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SupplyDepotDomain.Model;
 
@@ -11,9 +12,11 @@ using SupplyDepotDomain.Model;
 namespace SupplyDepotDomain.Migrations
 {
     [DbContext(typeof(SupplyOrdersContext))]
-    partial class SupplyOrdersContextModelSnapshot : ModelSnapshot
+    [Migration("20230310181224_UpdateVenorLocationParameters")]
+    partial class UpdateVenorLocationParameters
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

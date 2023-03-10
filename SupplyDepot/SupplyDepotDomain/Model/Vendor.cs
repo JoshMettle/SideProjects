@@ -17,7 +17,7 @@ public partial class Vendor
 
     public virtual int? AccountContactId { get; set; }
 
-    public int? RemitTo { get; set; }
+    public int? RemitToId { get; set; }
 
     [DefaultValue("false")]
     public bool? IsInactive { get; set; }
@@ -25,7 +25,7 @@ public partial class Vendor
 
     public virtual ICollection<Product> Products { get; } = new List<Product>();
 
-    public virtual Location? RemitToNavigation { get; set; }
+    public virtual Location? RemitToLocation { get; set; }
 
     public virtual ICollection<VendorOrderHeader> VendorOrderHeaders { get; } = new List<VendorOrderHeader>();
 

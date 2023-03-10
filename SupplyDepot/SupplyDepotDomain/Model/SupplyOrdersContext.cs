@@ -255,14 +255,14 @@ public partial class SupplyOrdersContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(250)
                 .HasColumnName("name");
-            entity.Property(e => e.RemitTo).HasColumnName("remit_to");
+            entity.Property(e => e.RemitToId).HasColumnName("remit_to");
 
             entity.HasOne(d => d.AccountContact).WithMany(p => p.Vendors)
                 .HasForeignKey(d => d.AccountContactId)
                 .HasConstraintName("FK_account_contact");
 
-            entity.HasOne(d => d.RemitToNavigation).WithMany(p => p.Vendors)
-                .HasForeignKey(d => d.RemitTo)
+            entity.HasOne(d => d.RemitToLocation).WithMany(p => p.Vendors)
+                .HasForeignKey(d => d.RemitToId)
                 .HasConstraintName("FK_remit_to");
         });
 
