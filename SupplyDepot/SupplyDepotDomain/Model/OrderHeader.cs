@@ -13,9 +13,14 @@ public partial class OrderHeader
 
     public decimal TotalAmount { get; set; }
 
-    public virtual ICollection<OrderDetail> OrderDetails { get; } = new List<OrderDetail>();
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
     public virtual User User { get; set; } = null!;
 
     public virtual ICollection<VendorOrderHeader> VendorOrderHeaders { get; } = new List<VendorOrderHeader>();
+
+    public OrderHeader()
+    {
+        OrderDetails = new List<OrderDetail>();
+    }
 }

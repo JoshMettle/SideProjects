@@ -93,16 +93,23 @@ namespace SupplyDepotDomain.DAO
             return targetVendor;
         }
 
+        /// <summary>
+        /// Updates Product record to flag them as inactive
+        /// </summary>
+        /// <param name="id"> Target Product Id</param>
+        /// <returns>True if Product record set to Inactive</returns>
         public bool DeactivateVendor(Vendor vendor)
         {
-            bool vendorDeleted = false;
+            bool IsInactive = false;
             using SupplyOrdersContext context = new SupplyOrdersContext();
             if (context.Vendors.Find(vendor.VendorId) != null)
             {
-                context.Vendors.Remove(vendor);
-                vendorDeleted = true;
+                vendor.IsInactive = true;
+                context.SaveChanges();
+                IsInactive = true;
+                
             }
-            return vendorDeleted;
+            return IsInactive;
         }
     }
 }

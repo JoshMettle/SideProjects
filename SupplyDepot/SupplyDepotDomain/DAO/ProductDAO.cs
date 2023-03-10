@@ -30,5 +30,25 @@ namespace SupplyDepotDomain.DAO
             Product? product = context.Products.Find(id);
             return product;
         }
+
+        /// <summary>
+        /// Updates Product record to flag them as inactive
+        /// </summary>
+        /// <param name="id"> Target Product Id</param>
+        /// <returns>True if Product record set to Inactive</returns>
+        public bool DeactivateProduct(int id)
+        {
+            bool isInactive = false;
+            using SupplyOrdersContext context = new SupplyOrdersContext();
+            Product? product = context.Products.Find(id);
+            if(product != null)
+            {
+                product.IsInactive = true;
+                context.SaveChanges();
+                isInactive = true;
+            }
+
+            return isInactive;
+        }
     }
 }

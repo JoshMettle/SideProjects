@@ -45,11 +45,11 @@ public partial class Vendor
     {
         if(AccountContact == null)
         {
-            return Name+" No Account Contact on File";
+            return Name+": No Account Contact on File";
         }
         else
         {
-            return $"{Name} Account Contact: {AccountContact.FirstName} {AccountContact.LastName} {AccountContact.Email}"; 
+            return $"{Name}: Account Contact: {AccountContact.FirstName} {AccountContact.LastName} {AccountContact.Email}"; 
         }
     }
 }

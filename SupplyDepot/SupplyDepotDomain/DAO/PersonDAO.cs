@@ -53,5 +53,25 @@ namespace SupplyDepotDomain.DAO
             return person;
         }
 
+        /// <summary>
+        /// Updates Person record to flag them as inactive
+        /// </summary>
+        /// <param name="id"> Target Person Id</param>
+        /// <returns>True if Person record set to Inactive</returns>
+        public bool DeactivatePerson(int id)
+        {
+            bool isInactive = false;
+            using SupplyOrdersContext context = new SupplyOrdersContext();
+            Person? person = context.People.Find(id);
+            if (person != null)
+            {
+                person.IsInactive = true;
+                context.SaveChanges();
+                isInactive = true;
+            }
+
+            return isInactive;
+        }
+
     }
 }
