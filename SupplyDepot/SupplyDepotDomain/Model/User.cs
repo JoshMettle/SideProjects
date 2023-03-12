@@ -19,6 +19,8 @@ public partial class User
     [DefaultValue("false")]
     public bool? IsInactive { get; set; }
     public int AccessLevel { get; set; }
+    public int LocationId { get; set; }
+    public virtual Location LocationNavigation {get; set;}
 
     public virtual UserAccessLevel AccessLevelNavigation { get; set; } = null!;
 

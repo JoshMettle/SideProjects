@@ -19,7 +19,8 @@ namespace SupplyDepotDomain.DAO
         {
             using SupplyOrdersContext context = new SupplyOrdersContext();
             List<Vendor> vendors = context.Vendors.Include(v => v.AccountContact)
-                                                  .Include(v => v.RemitToLocation).ToList();
+                                                  .Include(v => v.RemitToLocation)
+                                                  .ToList();
             return vendors;
         }
 
@@ -31,7 +32,9 @@ namespace SupplyDepotDomain.DAO
         public Vendor? GetVendorById(int id)
         {
             using SupplyOrdersContext context = new SupplyOrdersContext();
-            Vendor? vendor = context.Vendors.Include(v => v.AccountContact).Include(v => v.RemitToLocation).FirstOrDefault(v => v.VendorId == id);
+            Vendor? vendor = context.Vendors.Include(v => v.AccountContact)
+                                            .Include(v => v.RemitToLocation)
+                                            .FirstOrDefault(v => v.VendorId == id);
 
             return vendor;
         }

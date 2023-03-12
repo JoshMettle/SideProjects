@@ -24,4 +24,9 @@ public partial class VendorOrderHeader
     public virtual Vendor Vendor { get; set; } = null!;
 
     public virtual ICollection<VendorOrderDetail> VendorOrderDetails { get; } = new List<VendorOrderDetail>();
+
+    public VendorOrderHeader()
+    {
+        VendorOrderDetails = new List<VendorOrderDetail>();
+    }
 }
